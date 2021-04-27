@@ -1,0 +1,32 @@
+{% extends 'school/base.html' %}
+
+{% block ct1 %}
+<center>
+    <h1>คะแนนนักเรียน</h1>
+</center>
+{% endblock ct1 %}
+
+{% block content %}
+<div class="container">
+    <table class="table" style="width: 100%;">
+        <thead>
+            <tr>
+                <th scope="col">#ID</th>
+                <th scope="col">Student Name</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Score</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sc in score %}
+            <tr>
+                <th scope="row">{{sc.id}}</th>
+                <td>{{sc.student_name}}</td>
+                <td>{{sc.subject}}</td>
+                <td>{{sc.score}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}
