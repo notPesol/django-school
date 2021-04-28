@@ -1,0 +1,30 @@
+{% extends 'school/base.html' %}
+
+{% block ct1 %}
+  <center><h1>สมัครสมาชิก</h1></center>
+{% endblock ct1 %}
+
+{% block content %}
+<div class="container">
+    <form method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="first_name">ชื่อ:</label>
+        <input type="text" class="form-control w-50" id="first_name" name="first_name">
+      </div>
+      <div class="form-group">
+        <label for="last_name">นามสกุล:</label>
+        <input type="text" class="form-control w-50" id="last_name" name="last_name">
+      </div>
+      <div class="form-group">
+        <label for="email">อีเมลล์:</label>
+        <input type="email" class="form-control w-50" id="email" name="email">
+      </div>
+      <div class="form-group">
+        <label for="password">รหัสผ่าน:</label>
+        <input type="password" class="form-control w-50" id="password" name="password">
+      </div>
+      <button type="submit" class="btn btn-primary">สมัคร</button>
+    </form>
+</div>
+{% endblock content %}
