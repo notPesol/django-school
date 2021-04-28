@@ -1,0 +1,53 @@
+{% extends 'school/base.html' %}
+
+{% block ct1 %}
+<center>
+    <h1>ค้นหาข้อมูลนักเรียน</h1>
+</center>
+{% endblock ct1 %}
+
+{% block content %}
+<div class="container">
+
+    <!-- The form -->
+    <form class="example" method="POST">
+        {% csrf_token %}
+        <input type="text" placeholder="ค้นหาข้อมูลนักเรียน.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+
+</div>
+<br>
+
+<div class="container">
+
+    {% if result.student_id %}
+    {% comment %} หรือ if check {% endcomment %}
+    <center><h4>ผลการค้นหา</h4></center>
+    <table class="table" style="width: 100%;">
+        <thead>
+            <tr><th scope="col">ID</th><th scope="col">ชื่อนักเรียน</th><th>รูปประจำตัว</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>{{result.student_id}}</td><td>{{result.student_name}}</td>
+            {% if result.photo %}
+                <td>
+                    <img width="200" src="{{result.photo.url}}" alt="">
+                </td>
+            {% else %}
+            <td>
+                <img width="200" src="../../../media/studentPhoto/defualtPhoto.png" alt="">
+            </td>
+            {% endif %}</tr>
+            
+        </tbody>
+    </table>
+    {% elif not check  %}
+    <h3>{{result}}</h3>
+    {% else %}
+    <h5>กรุณากรอกรหัสนักศึกษา</h5>
+    {% endif %}
+
+</div>
+
+{% endblock %}

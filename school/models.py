@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models.base import Model
+from django.utils.translation import deactivate_all
 
 # Create your models here.
 class ExamScore(models.Model):
@@ -32,6 +33,7 @@ class AllStudent(models.Model):
     parent_name = models.CharField(max_length=200, blank=True, null=True)
     parent_tel = models.CharField(max_length=200, blank=True, null=True)
     other = models.TextField(blank=True, null=True)
+    photo = models.ImageField(upload_to="studentPhoto", blank=True, null=True)
 
     def __str__(self) -> str:
         return '{}-{}-{}'.format(self.student_id, self.student_name, self.level)
