@@ -132,3 +132,7 @@ LOGIN_REDIRECT_URL = 'home-page'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+# Django Image resize
+DJANGORESIZED_DEFAULT_SIZE = [1920, 1080]

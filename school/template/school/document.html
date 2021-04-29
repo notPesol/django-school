@@ -1,0 +1,125 @@
+{% extends 'school/base.html' %}
+
+{% block ct1 %}
+<center>
+    <h1>เอกสาร/หนังสือ</h1>
+</center>
+{% endblock ct1 %}
+
+{% block content %}
+<div class="container">
+    <table class="table table-bordered" style="width: 100%;">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">ชื่อไฟล์/เอกสาร ม.1</th>
+                <th scope="col">คำอธิบาย</th>
+            </tr>
+        </thead>
+        <tbody> 
+        {% for doc in document %}
+            {% if doc.level == 'ม.1' %}
+            <tr>
+                <td><a href="{{doc.document.url}}">{{doc.document_name}}</a></td>
+                <td>{{doc.other}}</td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <table class="table table-bordered" style="width: 100%;">
+        <thead>
+            <tr>
+                <th scope="col">ชื่อไฟล์/เอกสาร ม.2</th>
+                <th scope="col">คำอธิบาย</th>
+            </tr>
+        </thead>
+        <tbody> 
+        {% for doc in document %}
+            {% if doc.level == 'ม.2' %}
+            <tr>
+                <td><a href="{{doc.document.url}}">{{doc.document_name}}</a></td>
+                <td>{{doc.other}}</td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <table class="table table-bordered" style="width: 100%;">
+        <thead>
+            <tr>
+                <th scope="col">ชื่อไฟล์/เอกสาร ม.3</th>
+                <th scope="col">คำอธิบาย</th>
+            </tr>
+        </thead>
+        <tbody> 
+        {% for doc in document %}
+            {% if doc.level == 'ม.3' %}
+            <tr>
+                <td><a href="{{doc.document.url}}">{{doc.document_name}}</a></td>
+                <td>{{doc.other}}</td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <table class="table table-bordered" style="width: 100%;">
+        <thead>
+            <tr>
+                <th scope="col">ชื่อไฟล์/เอกสาร ม.4</th>
+                <th scope="col">คำอธิบาย</th>
+            </tr>
+        </thead>
+        <tbody> 
+        {% for doc in document %}
+            {% if doc.level == 'ม.4' %}
+            <tr>
+                <td><a href="{{doc.document.url}}">{{doc.document_name}}</a></td>
+                <td>{{doc.other}}</td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <table class="table table-bordered" style="width: 100%;">
+        <thead>
+            <tr>
+                <th scope="col">ชื่อไฟล์/เอกสาร ม.5</th>
+                <th scope="col">คำอธิบาย</th>
+            </tr>
+        </thead>
+        <tbody> 
+        {% for doc in document %}
+            {% if doc.level == 'ม.5' %}
+            <tr>
+                <td><a href="{{doc.document.url}}">{{doc.document_name}}</a></td>
+                <td>{{doc.other}}</td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <table class="table table-bordered" style="width: 100%;">
+        <thead>
+            <tr>
+                <th scope="col">ชื่อไฟล์/เอกสาร ม.6</th>
+                <th scope="col">คำอธิบาย</th>
+            </tr>
+        </thead>
+        <tbody> 
+        {% for doc in document %}
+            {% if doc.level == 'ม.6' %}
+            <tr>
+                <td><a href="{{doc.document.url}}">{{doc.document_name}}</a></td>
+                <td>{{doc.other}}</td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

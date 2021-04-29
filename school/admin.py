@@ -26,3 +26,8 @@ class StudentAdmin(admin.ModelAdmin):
 
 admin.site.register(AllStudent, StudentAdmin)
 
+
+admin.site.register(Profile)
+
+admin.site.register(DocumentUpload)
+
